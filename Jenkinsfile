@@ -18,7 +18,7 @@ sh 'mvn install'
 }
 stage ('echo branch'){
 steps{
-echo "this is master branch" 
+echo "this is test branch" 
 }
 }
 }
