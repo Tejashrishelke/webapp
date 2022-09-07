@@ -1,6 +1,10 @@
 pipeline {
- agent any
-stages {
+ agent {
+  node {
+   label "slaves"
+  }
+ }
+  stages {
 stage ('compile stage'){
 steps{
 sh 'mvn clean compile'
@@ -18,7 +22,7 @@ sh 'mvn install'
 }
 stage ('echo branch'){
 steps{
-echo "this is master branch" 
+echo "this is stages branch" 
 }
 }
 }
